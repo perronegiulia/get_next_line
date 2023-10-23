@@ -1,0 +1,6 @@
+    fd [1024] bytes 
+read(3, buf, 10);
+read from the fd 3 into the buffer 10 per call to function.
+when you recall the function, you ll get the next 10 chars.
+
+we are gonna stock all the n chars string into a linked list in the Heap.
