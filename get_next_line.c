@@ -7,7 +7,10 @@
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 20:32:07 by gmaia-pe          #+#    #+#             */
 /*   Updated: 2023/10/26 15:27:52 by giulia           ###   ########.fr       */
-/*                                                                            */
+/*                  
+mini printf
+last week
+ft_s                                                          */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
@@ -15,20 +18,20 @@
 
 char	*ft_content(int fd, char *buf, char *content)
 {
-	int	code;
+	int	read_return;
 
-	code = read(fd, content, BUFFER_SIZE);
-	while (code > 0)
+	read_return = read(fd, content, BUFFER_SIZE);
+	while (read_return > 0)
 	{
 		buf = ft_strjoin(buf, strdupn(content));
 		strcpyn(content);
 		if (ft_strchr(buf, '\n'))
 			return (buf);
-		code = read(fd, content, BUFFER_SIZE);
+		read_return = read(fd, content, BUFFER_SIZE);
 	}
-	if (code == 0)
+	if (read_return == 0)
 		content[0] = 0;
-	if (code == -1)
+	if (read_return == -1)
 	{
 		if (buf)
 			free(buf);

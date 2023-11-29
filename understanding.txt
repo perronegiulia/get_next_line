@@ -5,8 +5,6 @@ when you recall the function, you ll get the next 10 chars.
 
 we are gonna stock all the n chars string into a linked list in the Heap.
 
-O código inclui o cabeçalho "get_next_line.h" e o cabeçalho da biblioteca de E/S
- padrão "stdio.h".
 A função get_content é responsável por ler os dados do descritor de arquivo
 fornecido (fd) e armazená-los em um buffer (content). Ela usa uma função
 personalizada strdup_tilln (não fornecida no código) para duplicar o conteúdo do
