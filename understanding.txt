@@ -23,20 +23,34 @@ concatená-los com os dados lidos anteriormente. Por fim, ela retorna o resultad
 concatenado.
 No entanto, existem algumas considerações importantes e problemas com esse código:
 
-O tamanho do buffer, BUFFER_SIZE, é usado para ler dados do descritor de arquivo, mas seu valor não é fornecido no trecho de código. Certifique-se de definir BUFFER_SIZE adequadamente antes de usar esse código.
+O tamanho do buffer, BUFFER_SIZE, é usado para ler dados do descritor de arquivo, 
+mas seu valor não é fornecido no trecho de código. Certifique-se de definir BUFFER_SIZE
+adequadamente antes de usar esse código.
 
-Várias funções personalizadas, como strdup_tilln e strcpy_fromn, são usadas no código, mas suas implementações não são fornecidas. Você precisará definir essas funções para que o código funcione corretamente.
+Várias funções personalizadas, como strdup_tilln e strcpy_fromn, são usadas no código, 
+mas suas implementações não são fornecidas. Você precisará definir essas funções para 
+que o código funcione corretamente.
 
-O código não lida adequadamente com erros, o que é crucial para aplicativos do mundo real. Ele não lida com os erros retornados pela função read nem verifica falhas na alocação de memória.
+O código não lida adequadamente com erros, o que é crucial para aplicativos do mundo 
+real. Ele não lida com os erros retornados pela função read nem verifica falhas na 
+alocação de memória.
 
-O uso de static char content[BUFFER_SIZE] torna content compartilhado entre chamadas diferentes de get_next_line. Isso pode levar a comportamentos inesperados em um ambiente multithread.
+O uso de static char content[BUFFER_SIZE] torna content compartilhado entre chamadas 
+diferentes de get_next_line. Isso pode levar a comportamentos inesperados em um 
+ambiente multithread.
 
-O código pressupõe que as linhas no arquivo são terminadas com um caractere de nova linha, o que nem sempre é o caso.
+O código pressupõe que as linhas no arquivo são terminadas com um caractere de nova 
+linha, o que nem sempre é o caso.
 
-O código não lida com o caso em que o arquivo termina sem um caractere de nova linha. Isso significa que a última linha pode não ser retornada.
+O código não lida com o caso em que o arquivo termina sem um caractere de nova linha. 
+Isso significa que a última linha pode não ser retornada.
 
-É essencial liberar qualquer memória alocada dinamicamente (por exemplo, com malloc) para evitar vazamentos de memória. O código libera res em caso de erro de leitura, mas aparentemente não libera outras áreas de memória alocadas dinamicamente.
+É essencial liberar qualquer memória alocada dinamicamente (por exemplo, com malloc) 
+para evitar vazamentos de memória. O código libera res em caso de erro de leitura, 
+mas aparentemente não libera outras áreas de memória alocadas dinamicamente.
 
-O trecho de código está faltando partes críticas, como a definição de ft_strjoin e outras funções necessárias e a inclusão dos cabeçalhos requeridos.
+O trecho de código está faltando partes críticas, como a definição de ft_strjoin e outras 
+funções necessárias e a inclusão dos cabeçalhos requeridos.
 
-Para usar esse código de maneira eficaz, você precisará fornecer as funções ausentes, lidar com erros e fazer melhorias necessárias para robustez e flexibilidade.
+Para usar esse código de maneira eficaz, você precisará fornecer as funções ausentes, 
+lidar com erros e fazer melhorias necessárias para robustez e flexibilidade.
