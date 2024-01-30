@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmaia-pe <gmaia-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 18:48:29 by gmaia-pe          #+#    #+#             */
-/*   Updated: 2024/01/15 18:48:32 by gmaia-pe         ###   ########.fr       */
+/*   Created: 2024/01/15 17:30:41 by gmaia-pe          #+#    #+#             */
+/*   Updated: 2024/01/15 18:17:35 by gmaia-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,14 @@
 # include <unistd.h>
 # include <fcntl.h>
 
-// Declaração da função principal para obter a próxima linha do arquivo
 char	*get_next_line(int fd);
 
-// Declaração das funções utilitárias
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
 char	*ft_strjoin(char *s1, char *s2);
 void	strcpy_fromn(char *str);
 char	*strdup_tilln(char *str);
 
-// Declaração das funções adicionais
 void	*free_all(char **content, char **res, int mode);
 void	*ft_calloc(size_t nmemb, size_t size);
-
 #endif
